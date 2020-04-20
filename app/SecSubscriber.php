@@ -5,15 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Balping\HashSlug\HasHashSlug;
 
-class SecState extends Model
+class SecSubscriber extends Model
 {
     use HasHashSlug;
     
-    protected $table = "sec_states";
+    protected $table = "sec_subscribers";
     
     protected $guarded = [];
-    
-    public function incidents() {
-        return $this->hasMany('App\SecIncident');
-    }
 }

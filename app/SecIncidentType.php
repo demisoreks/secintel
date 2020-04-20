@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Balping\HashSlug\HasHashSlug;
 
-class SecState extends Model
+class SecIncidentType extends Model
 {
     use HasHashSlug;
     
-    protected $table = "sec_states";
+    protected $table = "sec_incident_types";
     
     protected $guarded = [];
     
