@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$link_id = (int) config('var.link_id');
+
+Route::get('/', [
+    'as' => 'welcome', 'uses' => 'WelcomeController@index'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager,Manager']);

@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('states', 'States@index');
+Route::get('states/{id}', 'States@show');

@@ -11,4 +11,8 @@ class States extends Controller
     public function index() {
         return SecState::where('active', true)->get();
     }
+    
+    public function show($id) {
+        return SecState::find($id);
+    }
 }
