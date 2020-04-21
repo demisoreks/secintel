@@ -25,7 +25,7 @@
 <div class="form-group row">
     {!! Form::label('risk_rating', 'Risk Rating *', ['class' => 'col-md-2 col-form-label']) !!}
     <div class="col-md-4">
-        {!! Form::select('risk_rating', ['Low' => 'Low', 'Moderate' => 'Moderate', 'High' => 'High'], $value = null, ['class' => 'form-control', 'placeholder' => '- Select Option -', 'required' => true]) !!}
+        {!! Form::select('risk_rating', ['Low' => 'Low', 'Medium' => 'Medium', 'High' => 'High'], $value = null, ['class' => 'form-control', 'placeholder' => '- Select Option -', 'required' => true]) !!}
     </div>
 </div>
 <div class="form-group row">
