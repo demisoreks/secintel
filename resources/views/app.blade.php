@@ -252,11 +252,13 @@ use GuzzleHttp\Client;
                                     </button>
                                 </h5>
                             </div>
-                            <div id="collapse-menu1" class="collapse @if (!isset($open_menu)) show @endif" aria-labelledby="heading-menu1" data-parent="#accordion-menu">
+                            <div id="collapse-menu1" class="collapse show" aria-labelledby="heading-menu1" data-parent="#accordion-menu">
                                 <div class="card-body">
                                     <nav class="nav flex-column">
                                         <a class="nav-link" href="{{ route('welcome') }}">Home</a>
-                                        <a class="nav-link" href="#">Incident Types</a>
+                                        <a class="nav-link" href="{{ route('states.index') }}">States</a>
+                                        <a class="nav-link" href="{{ route('incidents.index') }}">Incidents</a>
+                                        <a class="nav-link" href="{{ route('incident_types.index') }}">Incident Types</a>
                                     </nav>
                                 </div>
                             </div> 

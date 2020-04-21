@@ -1,9 +1,9 @@
-@extends('app', ['page_title' => 'Regions', 'open_menu' => 'settings'])
+@extends('app', ['page_title' => 'Incident Types', 'open_menu' => 'menu'])
 
 @section('content')
 <div class="row">
     <div class="col-12" style="margin-bottom: 20px;">
-        <a class="btn btn-primary" href="{{ route('regions.create') }}"><i class="fas fa-plus"></i> New Region</a>
+        <a class="btn btn-primary" href="{{ route('incident_types.create') }}"><i class="fas fa-plus"></i> New Incident Type</a>
     </div>
 </div>
 <div class="row">
@@ -22,20 +22,18 @@
                         <table id="myTable1" class="display-1 table table-condensed table-hover table-striped responsive" width="100%">
                             <thead>
                                 <tr class="text-center">
-                                    <th><strong>NAME</strong></th>
-                                    <th width="20%" data-priority="1">&nbsp;</th>
+                                    <th><strong>DESCRIPTION</strong></th>
                                     <th width="10%" data-priority="1">&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($regions as $region)
-                                    @if ($region->active)
+                                @foreach ($incident_types as $incident_type)
+                                    @if ($incident_type->active)
                                 <tr>
-                                    <td>{{ $region->name }}</td>
-                                    <td><a class="btn btn-primary btn-block btn-sm" href="{{ route('regions.instructors.index', [$region->slug()]) }}">Manage Instructors</a></td>
+                                    <td>{{ $incident_type->description }}</td>
                                     <td class="text-center">
-                                        <a title="Edit" href="{{ route('regions.edit', [$region->slug()]) }}"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
-                                        <a title="Trash" href="{{ route('regions.disable', [$region->slug()]) }}" onclick="return confirmDisable()"><i class="fas fa-trash"></i></a>
+                                        <a title="Edit" href="{{ route('incident_types.edit', [$incident_type->slug()]) }}"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
+                                        <a title="Trash" href="{{ route('incident_types.disable', [$incident_type->slug()]) }}" onclick="return confirmDisable()"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                                     @endif
@@ -58,19 +56,17 @@
                         <table id="myTable2" class="display-1 table table-condensed table-hover table-striped responsive" width="100%">
                             <thead>
                                 <tr class="text-center">
-                                    <th><strong>NAME</strong></th>
-                                    <th width="20%" data-priority="1">&nbsp;</th>
+                                    <th><strong>DESCRIPTION</strong></th>
                                     <th width="10%" data-priority="1">&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($regions as $region)
-                                    @if (!$region->active)
+                                @foreach ($incident_types as $incident_type)
+                                    @if (!$incident_type->active)
                                 <tr>
-                                    <td>{{ $region->name }}</td>
-                                    <td><a class="btn btn-primary btn-block btn-sm" href="{{ route('regions.instructors.index', [$region->slug()]) }}">Manage Instructors</a></td>
+                                    <td>{{ $incident_type->description }}</td>
                                     <td class="text-center">
-                                        <a title="Restore" href="{{ route('regions.enable', [$region->slug()]) }}"><i class="fas fa-undo"></i></a>
+                                        <a title="Restore" href="{{ route('incident_types.enable', [$incident_type->slug()]) }}"><i class="fas fa-undo"></i></a>
                                     </td>
                                 </tr>
                                     @endif
