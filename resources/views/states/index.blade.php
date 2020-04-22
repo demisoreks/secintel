@@ -17,9 +17,10 @@
                         <table id="myTable1" class="display-1 table table-condensed table-hover table-striped responsive" width="100%">
                             <thead>
                                 <tr class="text-center">
-                                    <th width="15%"><strong>NAME</strong></th>
+                                    <th width="12%"><strong>NAME</strong></th>
                                     <th width="10%"><strong>LOCKDOWN STATUS</strong></th>
                                     <th width="10%"><strong>LOCKDOWN END</strong></th>
+                                    <th width="8%"><strong>COVID-19 CASES</strong></th>
                                     <th width="10%"><strong>RISK RATING</strong></th>
                                     <th width="10%"><strong>EMERGENCY NUMBER(S)</strong></th>
                                     <th><strong>INFO</strong></th>
@@ -33,6 +34,7 @@
                                     <td>{{ $state->name }}</td>
                                     <td>{{ $state->lockdown_status }}</td>
                                     <td>{{ $state->lockdown_end }}</td>
+                                    <td align="right">{{ $state->covid_count }}</td>
                                     <td>{{ $state->risk_rating }}</td>
                                     <td>{{ $state->emergency }}</td>
                                     <td>{{ $state->info }}</td>

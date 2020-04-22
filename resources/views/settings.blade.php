@@ -13,6 +13,18 @@
                 </div>
             </div>
             <div class="form-group row">
+                {!! Form::label('headline_text', 'Headline Text *', ['class' => 'col-md-2 col-form-label']) !!}
+                <div class="col-md-6">
+                    {!! Form::text('headline_text', $value = null, ['class' => 'form-control', 'placeholder' => 'Headline Text', 'maxlength' => 500, 'required' => true]) !!}
+                </div>
+            </div>
+            <div class="form-group row">
+                {!! Form::label('headline_link', 'Headline Link', ['class' => 'col-md-2 col-form-label']) !!}
+                <div class="col-md-6">
+                    {!! Form::text('headline_link', $value = null, ['class' => 'form-control', 'placeholder' => 'Headline Link', 'maxlength' => 500]) !!}
+                </div>
+            </div>
+            <div class="form-group row">
                 <div class="col-md-10 offset-md-2">
                     {!! Form::submit('Update Settings', ['class' => 'btn btn-primary']) !!}
                 </div>
