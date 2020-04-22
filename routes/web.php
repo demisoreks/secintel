@@ -46,3 +46,10 @@ Route::resource('states', 'StatesController')->middleware(['auth.user', 'auth.ac
 Route::bind('states', function($value, $route) {
     return App\SecState::findBySlug($value)->first();
 });
+
+Route::get('settings', [
+    'as' => 'settings', 'uses' => 'SettingsController@index'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::put('settings/update', [
+    'as' => 'settings.update', 'uses' => 'SettingsController@update'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);

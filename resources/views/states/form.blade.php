@@ -31,7 +31,7 @@
 <div class="form-group row">
     {!! Form::label('emergency', 'Emergency Numbers *', ['class' => 'col-md-2 col-form-label']) !!}
     <div class="col-md-4">
-        {!! Form::text('emergency', $value = null, ['class' => 'form-control', 'placeholder' => 'Emergency Numbers', 'required' => true, 'maxlength' => 50]) !!}
+        {!! Form::text('emergency', $value = null, ['class' => 'form-control', 'placeholder' => 'Emergency Numbers', 'maxlength' => 50]) !!}
     </div>
 </div>
 <div class="form-group row">
