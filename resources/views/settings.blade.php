@@ -25,6 +25,12 @@
                 </div>
             </div>
             <div class="form-group row">
+                {!! Form::label('intel_report_link', 'Intel Report Link', ['class' => 'col-md-2 col-form-label']) !!}
+                <div class="col-md-6">
+                    {!! Form::text('intel_report_link', $value = null, ['class' => 'form-control', 'placeholder' => 'Intel Report Link', 'maxlength' => 500]) !!}
+                </div>
+            </div>
+            <div class="form-group row">
                 <div class="col-md-10 offset-md-2">
                     {!! Form::submit('Update Settings', ['class' => 'btn btn-primary']) !!}
                 </div>

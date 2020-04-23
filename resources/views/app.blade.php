@@ -257,6 +257,7 @@ use GuzzleHttp\Client;
                                     <nav class="nav flex-column">
                                         <a class="nav-link" href="{{ route('welcome') }}">Home</a>
                                         <a class="nav-link" href="{{ route('states.index') }}">States</a>
+                                        <a class="nav-link" href="{{ route('news_feeds.index') }}">News Feeds</a>
                                         <a class="nav-link" href="{{ route('incidents.index') }}">Incidents</a>
                                         <a class="nav-link" href="{{ route('incident_types.index') }}">Incident Types</a>
                                         <a class="nav-link" href="{{ route('settings') }}">Settings</a>

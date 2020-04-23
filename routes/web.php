@@ -53,3 +53,17 @@ Route::get('settings', [
 Route::put('settings/update', [
     'as' => 'settings.update', 'uses' => 'SettingsController@update'
 ])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+
+Route::get('news_feeds/{news_feed}/delete', [
+    'as' => 'news_feeds.delete', 'uses' => 'NewsFeedsController@destroy'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::get('news_feeds/{news_feed}/disable', [
+    'as' => 'news_feeds.disable', 'uses' => 'NewsFeedsController@disable'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::get('news_feeds/{news_feed}/enable', [
+    'as' => 'news_feeds.enable', 'uses' => 'NewsFeedsController@enable'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::resource('news_feeds', 'NewsFeedsController')->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::bind('news_feeds', function($value, $route) {
+    return App\SecNewsFeed::findBySlug($value)->first();
+});
