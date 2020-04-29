@@ -2,7 +2,7 @@
 
 namespace App\Charts;
 
-use ConsoleTVs\Charts\Classes\\Chart;
+use ConsoleTVs\Charts\Classes\Chart;
 
 class IncidentsChart extends Chart
 {

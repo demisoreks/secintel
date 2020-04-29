@@ -2,7 +2,7 @@
 
 namespace App\Charts;
 
-use ConsoleTVs\Charts\Classes\\Chart;
+use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
 class StatisticsChart extends Chart
 {

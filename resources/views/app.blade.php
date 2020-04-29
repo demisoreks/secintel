@@ -260,6 +260,7 @@ use GuzzleHttp\Client;
                                         <a class="nav-link" href="{{ route('news_feeds.index') }}">News Feeds</a>
                                         <a class="nav-link" href="{{ route('incidents.index') }}">Incidents</a>
                                         <a class="nav-link" href="{{ route('incident_types.index') }}">Incident Types</a>
+                                        <a class="nav-link" href="{{ route('subscribers.index') }}">Subscribers</a>
                                         <a class="nav-link" href="{{ route('settings') }}">Settings</a>
                                     </nav>
                                 </div>

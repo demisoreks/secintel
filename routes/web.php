@@ -67,3 +67,16 @@ Route::resource('news_feeds', 'NewsFeedsController')->middleware(['auth.user', '
 Route::bind('news_feeds', function($value, $route) {
     return App\SecNewsFeed::findBySlug($value)->first();
 });
+
+Route::get('subscribers/{subscriber}/disable', [
+    'as' => 'subscribers.disable', 'uses' => 'SubscribersController@disable'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::get('subscribers/{subscriber}/enable', [
+    'as' => 'subscribers.enable', 'uses' => 'SubscribersController@enable'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::get('subscribers', [
+    'as' => 'subscribers.index', 'uses' => 'SubscribersController@index'
+])->middleware(['auth.user', 'auth.access:'.$link_id.',Manager']);
+Route::bind('subscribers', function($value, $route) {
+    return App\SecSubscriber::findBySlug($value)->first();
+});
